@@ -1,6 +1,7 @@
+const webpack = require('webpack');
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 const path = require('path');
-const webpack = require('webpack');
+
 
 module.exports = {
     entry: {
@@ -10,8 +11,9 @@ module.exports = {
         tickets: "./assets/js/tickets.js"
     },
     output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: '[name].bundle.js'
+        filename: '[name].bundle.js',
+        //path: path.resolve(__dirname, '/dist')
+        path: __dirname  + '/dist'
     },
     module: {
         rules: [
